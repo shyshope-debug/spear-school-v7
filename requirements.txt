@@ -1,3 +1,5 @@
-flask
-flask-sqlalchemy
+Flask
+Flask-SQLAlchemy
 gunicorn
+fpdf
+requests
