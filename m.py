@@ -3,6 +3,7 @@ from flask import (
     Flask, render_template_string, request,
     redirect, session, send_file
 )
+from flask_sqlalchemy import SQLAlchemy
 import sqlite3, csv, io, requests
 from datetime import datetime, timedelta
 from functools import wraps
