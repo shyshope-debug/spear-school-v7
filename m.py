@@ -1,6 +1,4 @@
 import os
-with app.app_context():
-    db.create_all()
 from flask import (
     Flask, render_template_string, request,
     redirect, session, send_file
@@ -14,6 +12,8 @@ from fpdf import FPDF
 app = Flask(__name__)
 app.secret_key = "spear_school_secure_key_v7"
 
+with app.app_context():
+    db.create_all()
 # ================= CONFIG =================
 DB = "school.db"
 CURRENT_TERM = "Term 1 2026"
@@ -449,6 +449,4 @@ def logout():
 def page_not_found(error): 
     return render_template_string(CSS+HEADER+"""<div class="container"><div class="card"><h2>404 - Page Not Found</h2>
     <a class="btn" href="/dashboard">Dashboard</a></div></div>""")
-with app.app_context():
-    db.create_all()
 
