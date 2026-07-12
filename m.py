@@ -11,7 +11,11 @@ from fpdf import FPDF
 
 app = Flask(__name__)
 app.secret_key = "spear_school_secure_key_v7"
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///school.db'
+db = SQLAlchemy(app)
 
+with app.app_context():
+    db.create_all()
 with app.app_context():
     db.create_all()
 # ================= CONFIG =================
