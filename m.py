@@ -449,7 +449,6 @@ def logout():
 def page_not_found(error): 
     return render_template_string(CSS+HEADER+"""<div class="container"><div class="card"><h2>404 - Page Not Found</h2>
     <a class="btn" href="/dashboard">Dashboard</a></div></div>""")
-
-# ================= APPLICATION START =================
-if __name__ == "__main__":
+with app.app_context():
+    db.create_all()
 
